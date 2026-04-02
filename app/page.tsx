@@ -1,130 +1,88 @@
-import { PhoneCall, Clock, Calendar, CheckCircle } from "lucide-react";
-
-const services = [
-  "AI Voice Receptionist",
-  "AI-powered BPO automation",
-  "Lead generation pipelines",
-  "Intelligent customer communications",
-  "24/7 AI answering service",
-];
-
-const features = [
-  {
-    icon: Clock,
-    title: "24/7 Availability",
-    description:
-      "Never miss a call again. Our AI receptionist answers every enquiry around the clock, even outside business hours.",
-  },
-  {
-    icon: Calendar,
-    title: "Instant Booking",
-    description:
-      "Callers can schedule appointments immediately without waiting on hold or leaving a voicemail.",
-  },
-  {
-    icon: PhoneCall,
-    title: "Never Miss a Call",
-    description:
-      "Every inbound call is handled professionally, qualifying leads and capturing contact details automatically.",
-  },
-];
-
 export default function Home() {
-  const calendarLink = process.env.GOOGLE_CALENDAR_BOOKING_LINK || "#book";
+  const services = [
+    'AI Voice Receptionist',
+    'AI-powered BPO automation',
+    'Lead generation pipelines',
+    'Intelligent customer communications',
+    '24/7 AI answering service',
+  ]
+
+  const features = [
+    {
+      title: '24/7 Availability',
+      description: 'Never miss a call — your AI receptionist answers around the clock, every day of the year.',
+      icon: '🕐',
+    },
+    {
+      title: 'Instant Booking',
+      description: 'Callers can book appointments instantly without waiting on hold or speaking to staff.',
+      icon: '📅',
+    },
+    {
+      title: 'Never Miss a Call',
+      description: 'Every inbound call is captured, qualified, and routed — no lead left behind.',
+      icon: '📞',
+    },
+  ]
+
+  const bookingLink = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_LINK || '#book'
 
   return (
-    <main className="min-h-screen bg-[#0a0519]">
+    <main className="min-h-screen bg-white">
       {/* Hero */}
       <section
-        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(135deg, #0a0519 0%, #1a0b3d 50%, #0a0519 100%)",
-        }}
+        className="relative flex flex-col items-center justify-center text-center px-6 py-32 overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
       >
-        {/* Glow */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 40%, rgba(124,58,237,0.35) 0%, transparent 65%)",
-          }}
-        />
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border"
-            style={{
-              backgroundColor: "rgba(124,58,237,0.15)",
-              borderColor: "rgba(168,85,247,0.4)",
-              color: "#a855f7",
-            }}
-          >
-            London, UK · +44 20 0000 0000
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
             Lyriq AI
           </h1>
-          <p className="text-xl md:text-2xl text-purple-200 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-xl mx-auto">
             AI That Makes BPOs More Profitable
           </p>
           <a
             href="#widget"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-white font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl"
-            style={{
-              background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
-              boxShadow: "0 0 40px rgba(124,58,237,0.5)",
-            }}
+            className="inline-block px-8 py-4 rounded-2xl text-lg font-semibold text-white border-2 border-white/60 hover:bg-white/10 transition-all"
           >
-            <PhoneCall className="w-5 h-5" />
             Try AI Receptionist
           </a>
         </div>
       </section>
 
       {/* Widget */}
-      <section id="widget" className="py-20 px-6 bg-[#0d0722]">
+      <section id="widget" className="py-20 bg-gray-50 px-6">
         <div className="max-w-3xl mx-auto text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Talk to Our AI Receptionist
-          </h2>
-          <p className="text-purple-300 text-lg">
-            Experience a live conversation with Lyriq AI&apos;s intelligent voice assistant.
-          </p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Experience It Live</h2>
+          <p className="text-gray-500 text-lg">Talk to Lyriq AI's AI Receptionist right now — no signup needed.</p>
         </div>
-        <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl" style={{ boxShadow: "0 0 60px rgba(124,58,237,0.3)" }}>
+        <div className="max-w-2xl mx-auto">
           <iframe
             src="/widget.html"
             title="AI Voice Receptionist"
             width="100%"
             height="600"
-            style={{ border: "none", borderRadius: "12px" }}
+            style={{ border: 'none', borderRadius: '12px' }}
           />
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-20 px-6 bg-[#0a0519]">
+      <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our Services
-            </h2>
-            <p className="text-purple-300 text-lg max-w-xl mx-auto">
-              AI-powered solutions built for modern BPO and outsourcing businesses.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <div
                 key={service}
-                className="rounded-2xl p-6 border flex items-start gap-4"
-                style={{
-                  backgroundColor: "rgba(124,58,237,0.08)",
-                  borderColor: "rgba(168,85,247,0.2)",
-                }}
+                className="rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow bg-white"
               >
-                <CheckCircle className="w-6 h-6 mt-0.5 shrink-0" style={{ color: "#a855f7" }} />
-                <span className="text-white font-medium">{service}</span>
+                <div
+                  className="w-10 h-10 rounded-xl mb-5"
+                  style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+                />
+                <h3 className="text-lg font-semibold text-gray-900">{service}</h3>
               </div>
             ))}
           </div>
@@ -132,34 +90,20 @@ export default function Home() {
       </section>
 
       {/* AI Features */}
-      <section className="py-20 px-6 bg-[#0d0722]">
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why an AI Receptionist?
-            </h2>
-            <p className="text-purple-300 text-lg max-w-xl mx-auto">
-              Capture every lead, delight every caller, without adding headcount.
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
+            Why an AI Receptionist?
+          </h2>
+          <p className="text-center text-gray-500 mb-12 max-w-xl mx-auto">
+            Modern businesses need always-on, intelligent customer communication. Here is how AI delivers.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="rounded-2xl p-8 border text-center"
-                style={{
-                  backgroundColor: "rgba(124,58,237,0.1)",
-                  borderColor: "rgba(168,85,247,0.25)",
-                }}
-              >
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5"
-                  style={{ backgroundColor: "rgba(124,58,237,0.25)" }}
-                >
-                  <f.icon className="w-7 h-7" style={{ color: "#a855f7" }} />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{f.title}</h3>
-                <p className="text-purple-300 leading-relaxed">{f.description}</p>
+            {features.map((feature) => (
+              <div key={feature.title} className="text-center p-8 bg-white rounded-2xl shadow-sm">
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-gray-500 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -169,35 +113,25 @@ export default function Home() {
       {/* CTA */}
       <section
         className="py-24 px-6 text-center"
-        style={{
-          background:
-            "linear-gradient(135deg, #1a0b3d 0%, #0a0519 100%)",
-        }}
+        style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
       >
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-            Ready to Transform Your BPO?
-          </h2>
-          <p className="text-purple-300 text-lg mb-10">
-            Book a 15-minute demo call and see Lyriq AI in action.
-          </p>
-          <a
-            href={calendarLink}
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-2xl text-white font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl"
-            style={{
-              background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
-              boxShadow: "0 0 40px rgba(124,58,237,0.5)",
-            }}
-          >
-            <Calendar className="w-5 h-5" />
-            Book a demo call
-          </a>
-        </div>
+        <h2 className="text-4xl font-bold text-white mb-6">Ready to get started?</h2>
+        <p className="text-white/80 text-lg mb-10 max-w-md mx-auto">
+          Book a demo call with the Lyriq AI team and see what AI can do for your business.
+        </p>
+        <a
+          href={bookingLink}
+          className="inline-block px-10 py-4 rounded-2xl bg-white text-lg font-semibold hover:bg-white/90 transition-colors"
+          style={{ color: '#7c3aed' }}
+        >
+          Book a Demo Call
+        </a>
       </section>
 
-      <footer className="bg-[#0a0519] border-t py-8 text-center text-purple-400 text-sm" style={{ borderColor: "rgba(168,85,247,0.15)" }}>
-        © 2026 Lyriq AI · London, UK · +44 20 0000 0000 · test@lyriq.ai
+      {/* Footer */}
+      <footer className="py-8 px-6 text-center text-gray-400 text-sm border-t border-gray-100">
+        <p>2026 Lyriq AI - London, UK - +44 20 0000 0000</p>
       </footer>
     </main>
-  );
+  )
 }
