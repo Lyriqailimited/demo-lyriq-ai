@@ -3,10 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --brand-primary: #7c3aed;
-  --brand-accent: #a855f7;
+  --primary: #7c3aed;
+  --accent: #a855f7;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 5, 25;
+  --background-end-rgb: 20, 10, 40;
 }
 
-html {
-  scroll-behavior: smooth;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }

@@ -5,9 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lyriq AI — AI That Makes BPOs More Profitable",
-  description:
-    "Experience Lyriq AI's AI Voice Receptionist — available 24/7, never misses a call, and handles bookings instantly.",
+  title: "Lyriq AI",
+  description: "AI That Makes BPOs More Profitable — AI Voice Receptionist for London businesses",
 };
 
 export default function RootLayout({
